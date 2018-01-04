@@ -45,6 +45,21 @@ public class LinearArrayStudents {
 	}
 
 	/**
+	 * insert an element in the array
+	 */
+	public String insert(Student student) {
+		if (itemsCount == array.length)
+			return "The array is full";
+		for (int i = 0; i < itemsCount; i++) {
+			if (array[i].getId() == 0) {
+				array[i] = student;
+				itemsCount++;
+			}
+		}
+		return String.format("The student with the ID: %1$d is inserted", student.getId());
+	}
+
+	/**
 	 * returns the position of a specific element and -1 if it is not found.
 	 * 
 	 * @param x
@@ -121,7 +136,7 @@ public class LinearArrayStudents {
 		int index = this.isAtIndex(student);
 		if (index == -1)
 			return String.format("The student with ID: %1$d is not found.", student.getId());
-		for(int i = index; i < itemsCount - 1; i++) {
+		for (int i = index; i < itemsCount - 1; i++) {
 			array[i] = array[i + 1];
 		}
 		array[itemsCount] = student;
