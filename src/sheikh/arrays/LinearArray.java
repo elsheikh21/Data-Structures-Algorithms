@@ -8,8 +8,8 @@ package sheikh.arrays;
  * @author Sheikh
  */
 public class LinearArray {
-	int[] array;
-	int itemsCount;
+	private int[] array;
+	private int itemsCount;
 
 	/**
 	 * Empty constructor just gives you an instance of that object. You might use
@@ -28,7 +28,27 @@ public class LinearArray {
 	 * which initializes all the required member variables.
 	 */
 	public LinearArray(int maxSize) {
+		itemsCount = 0;
 		array = new int[maxSize];
+	}
+
+	/**
+	 * getters and setters for the instance variables of the class
+	 */
+	public int[] getArray() {
+		return array;
+	}
+
+	public void setArray(int[] array) {
+		this.array = array;
+	}
+
+	public int getItemsCount() {
+		return itemsCount;
+	}
+
+	public void setItemsCount(int itemsCount) {
+		this.itemsCount = itemsCount;
 	}
 
 	/**
@@ -79,38 +99,62 @@ public class LinearArray {
 	}
 
 	/**
-	 * insertLast which inserts a new element at the end of the array first
-	 * we need to check if the array is full or not, in case array is not full, add
-	 * the element to the end of the array and increment the itemsCount var
+	 * insertLast which inserts a new element at the end of the array first we need
+	 * to check if the array is full or not, in case array is not full, add the
+	 * element to the end of the array and increment the itemsCount var
 	 */
 	public String insertLast(int x) {
-		
+		if (array.length == itemsCount)
+			return "The array is full";
+		for (int i = 0; i < itemsCount; i++)
+			array[i + 1] = array[i];
+		array[itemsCount] = x;
+		itemsCount++;
+		return String.format("The element %1$d is inserted in the end of the array", x);
 	}
 
 	/**
-	 * insertFirst which inserts a new element at the beginning of the array
-	 * first, we need to check if the array is full or not, in case array is not
-	 * full, add the element to the beginning of the array, after shifting the
-	 * elements by one and increment the itemsCount var
+	 * insertFirst which inserts a new element at the beginning of the array first,
+	 * we need to check if the array is full or not, in case array is not full, add
+	 * the element to the beginning of the array, after shifting the elements by one
+	 * and increment the itemsCount var
 	 */
 	public String insertFirst(int x) {
-		
+		if (array.length == itemsCount)
+			return "The array is full";
+		for (int i = itemsCount; i > 0; i--)
+			array[i] = array[i - 1];
+		array[0] = x;
+		itemsCount++;
+		return String.format("The element %1$d is inserted in the beginning of the array", x);
 	}
 
 	/**
 	 * deletes a specific element from the array
 	 */
 	public String delete(int x) {
-		
+		int index = this.isAtIndex(x);
+		if (index == -1)
+			return String.format("The element %1$d is not found", x);
+		for (int i = index; i < itemsCount - 1; i++)
+			array[i] = array[i + 1];
+		itemsCount--;
+		return String.format("The element %1$d is deleted.", x);
 	}
 
-	// TODO: insert last/first & delete
 	public static void main(String[] args) {
 		// LinearArray linearArray = new LinearArray();
-		LinearArray linearArray = new LinearArray(5);
+		// LinearArray linearArray = new LinearArray(5);
 
 		// linearArray.createArray(5);
-		linearArray.printArrayElements();
+		// System.out.println(linearArray.insertFirst(3));
+		// System.out.println(linearArray.insertLast(12));
+		// System.out.println(linearArray.insertFirst(5));
+		// linearArray.printArrayElements();
+
+		// System.out.println(linearArray.delete(18));
+		// System.out.println(linearArray.delete(5));
+		// linearArray.printArrayElements();
 
 		// System.out.println(linearArray.insertFirst(3));
 		// System.out.println(linearArray.insertLast(5));
