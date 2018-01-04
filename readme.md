@@ -1,6 +1,7 @@
 # Data Structures and Algorithms #
 
-## Arrays ##
+<details>
+<summary>Arrays</summary>
 
 * First excercise 
     * Create LinearArray class
