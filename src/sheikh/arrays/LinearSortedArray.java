@@ -78,14 +78,76 @@ public class LinearSortedArray {
 		System.out.println();
 	}
 
+	/**
+	 * Returns index of a certain element if found, else return -1
+	 */
+	public int linearSearch(int x) {
+		for (int i = 0; i < itemsCount; i++)
+			if (array[i] == x)
+				return i;
+		return -1;
+	}
+
+	/**
+	 * Returns index of a certain element if found binary, else return -1
+	 */
+	public String binarySearchIter(int x) {
+		int lowerBound = 0;
+		int upperBound = itemsCount - 1;
+		int pos;
+		while (lowerBound <= upperBound) {
+			pos = (lowerBound + upperBound) / 2;
+			if (array[pos] == x)
+				return String.format("The element (%1$d) is found at index of (%2$d).", x, pos);
+			else if (x > array[pos])
+				lowerBound = pos + 1;
+			else
+				upperBound = pos - 1;
+		}
+		return String.format("The element (%1$d) is not found.", x);
+	}
+
+	/**
+	 * Returns index of a certain element if found recursively, else return -1
+	 */
+	public int binarySearchRec(int x) {
+		return binary(0, itemsCount - 1, x);
+	}
+
+	public int binary(int lowerBound, int upperBound, int x) {
+		int pos = lowerBound + (upperBound - lowerBound) / 2;
+		if (lowerBound > upperBound)
+			return -1;
+		else if (array[pos] == x)
+			return pos;
+		else if (x > array[pos])
+			return binary(pos + 1, upperBound, x);
+		else
+			return binary(lowerBound, pos - 1, x);
+	}
+
+	/**
+	 * Deletes an element if found in array
+	 */
+	public String delete(int x) {
+		int index = this.linearSearch(x);
+		if (index == -1)
+			return String.format("This number (%1$d) is not found", x);
+		// shift the rest of the elements by one position
+		for (int i = index; i < itemsCount - 1; i++)
+			array[i] = array[i + 1];
+		itemsCount--;
+		return String.format("This number (%1$d) is deleted", x);
+	}
+
 	public static void main(String[] args) {
 		LinearSortedArray linearSortedArray = new LinearSortedArray(5);
-		// linearSortedArray.displayArray();
-		// System.out.println(linearSortedArray.orderedInsert(5));
-		// System.out.println(linearSortedArray.orderedInsert(15));
-		// System.out.println(linearSortedArray.orderedInsert(25));
-		// System.out.println(linearSortedArray.orderedInsert(35));
-		// linearSortedArray.displayArray();
-
+		linearSortedArray.orderedInsert(5);
+		linearSortedArray.orderedInsert(15);
+		linearSortedArray.orderedInsert(25);
+		linearSortedArray.orderedInsert(35);
+		linearSortedArray.displayArray();
+		System.out.println(linearSortedArray.binarySearchIter(35));
+		System.out.println(linearSortedArray.delete(35));
 	}
 }
