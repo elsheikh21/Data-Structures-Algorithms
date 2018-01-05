@@ -83,8 +83,7 @@ public class Utilities {
 		}
 		return arrayStack;
 	}
-	
-	// TODO:
+
 	public static boolean cubeGameCheck(ArrayStack arrayStack) {
 		
 		return false;
