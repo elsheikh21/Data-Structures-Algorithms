@@ -23,14 +23,6 @@ public class ArrayStack {
 		this.arrayStack = arrayStack;
 	}
 
-	public int getTop() {
-		return top;
-	}
-
-	public void setTop(int top) {
-		this.top = top;
-	}
-
 	public ArrayStack() {
 		super();
 	}
@@ -87,6 +79,22 @@ public class ArrayStack {
 		return atIndex;
 	}
 
+	public int[] reverse(int[] arrayStack) {
+		int[] rev = new int[arrayStack.length];
+		for (int i = 0; i < arrayStack.length; i++) {
+			int j = i + 1;
+			rev[arrayStack.length - j] = arrayStack[i];
+		}
+		return rev;
+	}
+
+	public void printArray(int[] arr) {
+		System.out.print("Array elements are: ");
+		for (int i = 0; i < arr.length; i++)
+			System.out.print(arr[i] + " ");
+		System.out.println();
+	}
+
 	public static void main(String[] args) {
 		ArrayStack arrayStack = new ArrayStack(10);
 		arrayStack.push(6);
@@ -94,32 +102,60 @@ public class ArrayStack {
 		arrayStack.push(3);
 		arrayStack.push(5);
 		arrayStack.push(4);
-		arrayStack.push(1);
 		arrayStack.push(2);
+		arrayStack.push(1);
+		arrayStack.push(8);
+		arrayStack.push(0);
 		arrayStack.push(7);
-		arrayStack.push(72);
-		arrayStack.push(17);
 
-		Utilities utilities = new Utilities();
-		
-//		String word = "(([()[]][])[])";
-//		String print = utilities.checkParentheses(word)
-//				? String.format("This word '%s' is matching Parentheses", word)
-//				: String.format("This word '%s' is not a matching Parentheses", word);
-//		System.out.println(print);
-//
-//		int atIndex = utilities.searchInStack(arrayStack, 3);
-//		print = (atIndex == -1) ? "The number you are searching for is not found"
-//				: String.format("The number is found at index of (%1$d)", atIndex);
-//		System.out.println(print);
-//
-//		atIndex = arrayStack.searchInStack(6);
-//		print = (atIndex == -1) ? "The number you are searching for is not found"
-//				: String.format("The number is found at index of (%1$d)", atIndex);
-//		System.out.println(print);
-//		
-//		Utilities.decompose(arrayStack);
-//		
-//		utilities.sort(arrayStack).printStack();
+		 Utilities utilities = new Utilities();
+
+		// Exercise #01
+		// String word = "(([()[]][])[])";
+		// String print = utilities.checkParentheses(word) ? String.format("This word
+		// '%s' is matching Parentheses", word)
+		// : String.format("This word '%s' is not a matching Parentheses", word);
+		// System.out.println(print);
+		//
+		// // Exercise #02
+		// int atIndex = utilities.searchInStack(arrayStack, 3);
+		// print = (atIndex == -1) ? "The number you are searching for is not found"
+		// : String.format("The number is found at index of (%1$d)", atIndex);
+		// System.out.println(print);
+		//
+		// atIndex = arrayStack.searchInStack(6);
+		// print = (atIndex == -1) ? "The number you are searching for is not found"
+		// : String.format("The number is found at index of (%1$d)", atIndex);
+		// System.out.println(print);
+		//
+		// // Exercise #03
+		// Utilities.decompose(arrayStack);
+		//
+		// // Exercise #04
+		// utilities.sort(arrayStack).printStack();
+		//
+		// // Exercise #05
+		// print = Utilities.cubeGameCheck(arrayStack) ? "Eligible for cube game" : "NOT
+		// Eligible for cube game";
+		// System.out.println(print);
+		//
+		// // Exercise #06
+		// arrayStack.printStack();
+		// utilities.reverse1(arrayStack).printStack();
+		// utilities.reverse2(arrayStack).printStack();
+		// utilities.reverse3(arrayStack).printStack();
+		// int[] internalStack = new int[] { 1, 10, 12, 13, 14, 15, 16, 17, 25 };
+		// arrayStack.printArray(internalStack);
+		// int[] x = arrayStack.reverse(internalStack);
+		// arrayStack.printArray(x);
+		//
+		// Exercise #07
+		// arrayStack.printStack();
+		// Utilities.removeNth(arrayStack, 5).printStack();
+		// Utilities.removeTheNth(arrayStack, 1).printStack();
+		//
+		// Exercise #08
+		 arrayStack.printStack();
+		 utilities.stackSort(arrayStack).printStack();
 	}
 }
