@@ -1,5 +1,7 @@
 package sheikh.arrays;
 
+import sheikh.objects.Student;
+
 public class LinearArrayStudents {
 	private Student[] array;
 	private int itemsCount;

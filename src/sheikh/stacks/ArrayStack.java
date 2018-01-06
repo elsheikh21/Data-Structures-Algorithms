@@ -108,7 +108,7 @@ public class ArrayStack {
 		arrayStack.push(0);
 		arrayStack.push(7);
 
-		 Utilities utilities = new Utilities();
+		Utilities utilities = new Utilities();
 
 		// Exercise #01
 		// String word = "(([()[]][])[])";

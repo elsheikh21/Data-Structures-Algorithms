@@ -4,7 +4,7 @@
 <summary>Data Structure</summary>
 
 <details>
-<summary>Arrays</summary>
+<summary>1. Arrays</summary>
 
 * 1st exercise 
     * Create LinearArray class
@@ -36,11 +36,11 @@
         * method to delete an element from the ordered array
         
 </details>
-        
-<hr>
+ 
+ ---
 
 <details>
-<summary>Stacks</summary>
+<summary>2. Stacks</summary>
 
 * Implement ArrayStack class
 * 1st exercise
@@ -66,16 +66,44 @@
 	* Remove elements the nth element
 * 8th exercise
 	* Sort a stack desc
-</details>
+
 </details>
 
-<hr>
-<hr>
+---
+
+<details>
+<summary>3. Stack of Objects</summary>
+
+* Implement StackObject class (like java.util.Stack)
+* 1st exercise
+	* Method to calculate average gpa for stack of students
+* 2nd exercise 
+    * transform infix expression to postfix expression **__[failed to implement]__**
+* 3rd exercise 
+    *  Evaluate a postfix expression **__[failed to implement]__**
+* 4th exercise
+	* Remove nth element __implemented earlier__
+* 5th exercise 
+	* Browsing history
+        * delete url
+        * insert url 
+        * get most viewed url
+        * remove last url
+        * remove urls on date
+        * get no. of urls
+        * print all urls
+
+</details>
+
+</details>
+
+---
+---
 
 <details>
 <summary>Algorithms</summary>
     Sadly empty :'(
 </details>
 
-<hr>
-<hr>
+---
+---
