@@ -1,5 +1,6 @@
 package sheikh.objects;
 
+import sheikh.queues.QueueObject;
 import sheikh.stacks.StackObject;
 
 public class Palindrome {
@@ -8,13 +9,13 @@ public class Palindrome {
 		word = word.toLowerCase().replace(" ", "");
 		int mid = word.length() / 2;
 		StackObject stack = new StackObject(mid);
-		for (int i = 0; i < mid; i++) 
+		for (int i = 0; i < mid; i++)
 			stack.push(String.valueOf(word.charAt(i)));
 		if (word.length() % 2 == 1)
 			mid++;
 		for (int i = mid; i < word.length(); i++) {
-			String toCheck = (String) stack.pop(); 
-			String toCheckWith = String.valueOf(word.charAt(i)); 
+			String toCheck = (String) stack.pop();
+			String toCheckWith = String.valueOf(word.charAt(i));
 			if (!toCheck.equals(toCheckWith))
 				return false;
 		}
@@ -56,4 +57,23 @@ public class Palindrome {
 		return "Word is palindrome";
 	}
 
+	public boolean isPal(String word) {
+		word = word.toLowerCase().replace(" ", "");
+		int mid = word.length() / 2;
+		StackObject stack = new StackObject(mid);
+		QueueObject queue = new QueueObject(mid);
+		for (int i = 0; i < mid; i++) 
+			stack.push((Character) word.charAt(i));
+		int size = word.length();
+		if(size % 2 == 1)
+			mid++;
+		for(int j = mid; j < size; j++)
+			queue.enqueue((Character) word.charAt(j));
+		while(!stack.isEmpty())
+			if(stack.pop() == queue.dequeue())
+				continue;
+			else 
+				return false;
+		return true;
+	}
 }

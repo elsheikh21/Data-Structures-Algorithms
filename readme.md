@@ -117,7 +117,20 @@
     * implement a queue using stack
 * 4th exercise
     * shift zeros in queues to the end
+* 5th exercise
+    * Extract every 3rd element
+* 6th exercise
+    * check if word is an anagram
+* 7th exercise
+    * check if a word is palindrome
+* 8th exercise
+    * Implement a Deque class
+</details>
 
+---
+
+<details>
+<summary>5. Priority Queues</summary>
 </details>
 
 

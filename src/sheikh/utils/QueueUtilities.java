@@ -1,5 +1,6 @@
 package sheikh.utils;
 
+import sheikh.objects.Palindrome;
 import sheikh.queues.QueueObject;
 import sheikh.stacks.StackObject;
 
@@ -21,13 +22,41 @@ public class QueueUtilities {
 
 		qObject.printQueue();
 
-		// QueueUtilities qUtilities = new QueueUtilities();
-		// qObject.printQueue();
-		// qUtilities.mirror(qObject).printQueue();
+		QueueUtilities queueUtilities = new QueueUtilities();
+		qObject.printQueue();
+		queueUtilities.mirror(qObject).printQueue();
 
-		// // I was not able to solve this problem, so I copied the solution
-		// System.out.println(qUtilities.prefixEval("+ 10 * 2 3"));
+		// I was not able to solve this problem, so I copied the solution
+		System.out.println(queueUtilities.prefixEval("+ 10 * 2 3"));
+
 		QueueUtilities.shiftZeroes(qObject).printQueue();
+
+		QueueObject qObj = new QueueObject(10);
+
+		qObj.enqueue('a');
+		qObj.enqueue('b');
+		qObj.enqueue('c');
+		qObj.enqueue('d');
+		qObj.enqueue('e');
+		qObj.enqueue('f');
+		qObj.enqueue('g');
+		qObj.enqueue('h');
+		qObj.enqueue('i');
+		qObj.enqueue('j');
+
+		qObj.printQueue();
+		queueUtilities.everyThirdElement(qObj).printQueue();
+
+		// I was not able to solve this problem, so I copied the solution
+		String print = queueUtilities.isAnagram("stoc", "cost") ? "The words are anagrams"
+				: "The words are not anagrams";
+		System.out.println(print);
+
+		Palindrome palindrome = new Palindrome();
+		print = palindrome.isPal("mom") ? "It is palindrome" : "It is not palindrome";
+		System.out.println(print);
+		print = palindrome.isPal("crm") ? "It is palindrome" : "It is not palindrome";
+		System.out.println(print);
 	}
 
 	public QueueObject mirror(QueueObject queueObj) {
@@ -110,7 +139,7 @@ public class QueueUtilities {
 	public static QueueObject shiftZeroes(QueueObject qObj) {
 		QueueObject temp = new QueueObject(qObj.size());
 		int size = countZeros(qObj);
-		if(size == 0)
+		if (size == 0)
 			return qObj;
 		StackObject temp1 = new StackObject(size);
 		while (!qObj.isEmpty()) {
@@ -120,7 +149,7 @@ public class QueueUtilities {
 			else
 				temp.enqueue(deQ);
 		}
-		while(!temp1.isEmpty())
+		while (!temp1.isEmpty())
 			temp.enqueue(temp1.pop());
 		return temp;
 	}
@@ -134,8 +163,47 @@ public class QueueUtilities {
 				count++;
 			q.enqueue(deQ);
 		}
-		while (!q.isEmpty()) 
+		while (!q.isEmpty())
 			qObj.enqueue(q.dequeue());
 		return count;
+	}
+
+	public QueueObject everyThirdElement(QueueObject qObj) {
+		int size = qObj.size();
+		int count = 0;
+		StackObject stack = new StackObject(size);
+		for (int i = 0; i < size; i++) {
+			Object deQ = qObj.dequeue();
+			if (i % 3 == 0) {
+				count++;
+				stack.push(deQ);
+			}
+			qObj.enqueue(deQ);
+		}
+		QueueObject qO = new QueueObject(count);
+		while (!stack.isEmpty())
+			qO.enqueue(stack.pop());
+		return qO;
+	}
+
+	public boolean isAnagram(String firstWord, String secondWord) {
+		QueueObject qA = new QueueObject(firstWord.length());
+		QueueObject qB = new QueueObject(secondWord.length());
+		for (int i = 0; i < firstWord.length(); i++) {
+			qA.enqueue(firstWord.charAt(i));
+			qB.enqueue(secondWord.charAt(i));
+		}
+		while (!qA.isEmpty()) {
+			Character currA = (Character) qA.dequeue();
+			Character headB = (Character) qB.dequeue();
+			Character currB = headB;
+			while (currA.charValue() != currB.charValue()) {
+				qB.enqueue(currB);
+				currB = (Character) qB.dequeue();
+				if (currB == headB)
+					return false;
+			}
+		}
+		return true;
 	}
 }
