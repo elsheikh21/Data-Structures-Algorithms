@@ -48,4 +48,11 @@ public class StackObject {
 			System.out.println();
 		}
 	}
+	
+	public Object[] reverse(Object[] toRev) {
+		Object[] rev = new Object[toRev.length];
+		for(int i = 0; i < rev.length; i++)
+			rev[rev.length - (i + 1)] = toRev[i];
+		return rev;
+	}
 }

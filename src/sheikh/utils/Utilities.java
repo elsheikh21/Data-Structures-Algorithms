@@ -403,8 +403,9 @@ public class Utilities {
 		System.out.println(palindrome.wordIsPalindrome("Radar"));
 		// Extra Exercise on arrays, reverse a string
 		System.out.println(palindrome.reverse("Sheikh"));
-		
-		// Exercise #08, MySet.class 
+
+		// Exercise #08, MySet.class
+
 		
 	}
 

@@ -107,7 +107,17 @@
 
 <details>
 <summary>4. Queues</summary>
-    Empty so far...
+
+* Implement a  Queue Object class
+* 1st exercise
+    * Mirror a queue (reversed + original)
+* 2nd exercise
+    * prefix evaluation of expressions
+* 3rd exercise
+    * implement a queue using stack
+* 4th exercise
+    * shift zeros in queues to the end
+
 </details>
 
 
