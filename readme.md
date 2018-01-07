@@ -92,8 +92,24 @@
         * remove urls on date
         * get no. of urls
         * print all urls
-
+* 6th exercise 
+    * method to duplicate stack enteries depending upon another stack integers
+* 7th exercise    
+    * method to check if a word/sentence is palindrome or not
+* 8th exercise
+    * Implement a class called MySet
+* Extras
+    * reverse a string
+    * check if a word is palindrome
 </details>
+
+--- 
+
+<details>
+<summary>4. Queues</summary>
+    Empty so far...
+</details>
+
 
 </details>
 
@@ -102,7 +118,7 @@
 
 <details>
 <summary>Algorithms</summary>
-    Sadly empty :'(
+    Empty so far...
 </details>
 
 ---

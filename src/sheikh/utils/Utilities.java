@@ -1,5 +1,6 @@
 package sheikh.utils;
 
+import sheikh.objects.Palindrome;
 import sheikh.objects.Student;
 import sheikh.stacks.ArrayStack;
 import sheikh.stacks.PostFixEv;
@@ -213,6 +214,19 @@ public class Utilities {
 
 	////////////////// STACK OF OBJECTS //////////////////
 
+	public StackObject reverseStackObject(StackObject stackObject) {
+		int size = stackObject.size();
+		StackObject temp = new StackObject(size);
+		StackObject temp1 = new StackObject(size);
+		while (!stackObject.isEmpty())
+			temp.push(stackObject.pop());
+		while (!temp.isEmpty())
+			temp1.push(temp.pop());
+		while (!temp1.isEmpty())
+			stackObject.push(temp1.pop());
+		return stackObject;
+	}
+
 	public static String reverseString(String str) {
 		StackObject stk = new StackObject(str.length() + 1);
 		for (int i = 0; i < str.length(); i++) {
@@ -281,6 +295,40 @@ public class Utilities {
 				postfix);
 	}
 
+	public StackObject duplicate(StackObject strings, StackObject integers) {
+		int size = numbersOfDuplications(integers);
+		StackObject result = new StackObject(size);
+		StackObject intTemp = new StackObject(integers.size());
+		StackObject stringsTemp = new StackObject(strings.size());
+		while (!strings.isEmpty()) {
+			String popped = (String) strings.pop();
+			int poppedInt = (Integer) integers.pop();
+			for (int i = 0; i < poppedInt; i++) {
+				result.push(popped);
+			}
+			intTemp.push(poppedInt);
+			stringsTemp.push(popped);
+		}
+		while (!stringsTemp.isEmpty()) {
+			integers.push((Integer) intTemp.pop());
+			strings.push((String) stringsTemp.pop());
+		}
+		return result;
+	}
+
+	private int numbersOfDuplications(StackObject integers) {
+		StackObject temp = new StackObject(integers.size());
+		int sum = 0;
+		while (!integers.isEmpty()) {
+			int tempVal = (Integer) integers.pop();
+			sum += tempVal;
+			temp.push(tempVal);
+		}
+		while (!temp.isEmpty())
+			integers.push((Integer) temp.pop());
+		return sum;
+	}
+
 	public static void main(String[] args) {
 		StackObject stack = new StackObject(5);
 
@@ -298,19 +346,66 @@ public class Utilities {
 
 		Utilities utilities = new Utilities();
 
+		// Exercise #01
 		String print = utilities.averageGPA(stack);
 		System.out.println(print);
 
-		System.out.println();
-
+		// Exercise #02
 		// I copied its solution, was not able to solve it.
 		print = Utilities.infixToPostfix("1+2*3-4");
 		System.out.println(print);
 
-		System.out.println();
-
+		// Exercise #03
 		// I copied its solution, was not able to solve it.
 		print = PostFixEv.evaluate("1 2 3 * + 4 -");
 		System.out.println(print);
+
+		// Exercise #04 is duplicated, removeNthElement
+		// Exercise #05 is Browsing History and Link files
+
+		// Exercise #06
+		StackObject strings = new StackObject(5);
+		StackObject integers = new StackObject(5);
+
+		strings.push((String) "Ahmed");
+		strings.push((String) "Sheikh");
+		strings.push((String) "Farah");
+		strings.push((String) "Hesham");
+		strings.push((String) "Eman");
+
+		integers.push((Integer) 1);
+		integers.push((Integer) 4);
+		integers.push((Integer) 3);
+		integers.push((Integer) 2);
+		integers.push((Integer) 3);
+
+		StackObject duplicate = utilities.duplicate(strings, integers);
+		utilities.reverseStackObject(duplicate).printStack();
+
+		// Exercise #07, Class palindrome
+		Palindrome palindrome = new Palindrome();
+		print = palindrome.isPalindrome("mom") ? "It is a palindrome" : "It is not a palindrome";
+		System.out.println(print);
+
+		print = palindrome.isPalindrome("car") ? "It is a palindrome" : "It is not a palindrome";
+		System.out.println(print);
+
+		print = palindrome.isPalindrome("Are we not drawn onward we few drawn onward to new era") ? "It is a palindrome"
+				: "It is not a palindrome";
+		System.out.println(print);
+
+		print = palindrome.isPalindrome("Then it comes to be that the soothing light at the end of your tunnel\r\n"
+				+ "Is just a freight train coming your way") ? "It is a palindrome" : "It is not a palindrome";
+		System.out.println(print);
+
+		// Extra Exercise on Palindrome, check if word is palindrome
+		System.out.println(palindrome.wordIsPalindrome("car"));
+		System.out.println(palindrome.wordIsPalindrome("Radar"));
+		// Extra Exercise on arrays, reverse a string
+		System.out.println(palindrome.reverse("Sheikh"));
+		
+		// Exercise #08, MySet.class 
+		
 	}
+
 }
