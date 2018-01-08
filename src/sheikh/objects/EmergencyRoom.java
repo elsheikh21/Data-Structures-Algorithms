@@ -3,7 +3,7 @@ package sheikh.objects;
 import sheikh.queues.PriorityQueue;
 
 public class EmergencyRoom {
-	PriorityQueue pq;
+	private PriorityQueue pq;
 
 	public EmergencyRoom(int size) {
 		pq = new PriorityQueue(size);

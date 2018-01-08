@@ -5,8 +5,8 @@ import sheikh.stacks.StackObject;
 
 public class Palindrome {
 
-	public boolean isPalindrome(String word) {
-		word = word.toLowerCase().replace(" ", "");
+	public boolean isPalindrome(String str) {
+		String word = str.toLowerCase().replace(" ", "");
 		int mid = word.length() / 2;
 		StackObject stack = new StackObject(mid);
 		for (int i = 0; i < mid; i++)
@@ -22,8 +22,8 @@ public class Palindrome {
 		return true;
 	}
 
-	public String reverse(String word) {
-		word = word.toLowerCase();
+	public String reverse(String str) {
+		String word = str.toLowerCase();
 		int size = word.length();
 		String rev = "";
 		char[] ch = new char[size];
@@ -37,14 +37,11 @@ public class Palindrome {
 	}
 
 	public boolean checkWord(String word) {
-		String res = wordIsPalindrome(word);
-		if (res.contains("not"))
-			return false;
-		return true;
+		return !(wordIsPalindrome(word)).contains("not");
 	}
 
-	public String wordIsPalindrome(String word) {
-		word = word.toLowerCase();
+	public String wordIsPalindrome(String str) {
+		String word = str.toLowerCase();
 		int middle = word.length() / 2;
 		StackObject stack = new StackObject(middle);
 		for (int i = 0; i < middle; i++)
@@ -62,17 +59,17 @@ public class Palindrome {
 		int mid = word.length() / 2;
 		StackObject stack = new StackObject(mid);
 		QueueObject queue = new QueueObject(mid);
-		for (int i = 0; i < mid; i++) 
+		for (int i = 0; i < mid; i++)
 			stack.push((Character) word.charAt(i));
 		int size = word.length();
-		if(size % 2 == 1)
+		if (size % 2 == 1)
 			mid++;
-		for(int j = mid; j < size; j++)
+		for (int j = mid; j < size; j++)
 			queue.enqueue((Character) word.charAt(j));
-		while(!stack.isEmpty())
-			if(stack.pop() == queue.dequeue())
+		while (!stack.isEmpty())
+			if (stack.pop() == queue.dequeue())
 				continue;
-			else 
+			else
 				return false;
 		return true;
 	}

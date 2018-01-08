@@ -120,17 +120,17 @@ public class QueueUtilities {
 	}
 
 	private boolean isOperator(String s) {
-		return s.equals("+") || s.equals("-") || s.equals("*") || s.equals("/");
+		return "+".equals(s) || "-".equals(s) || "*".equals(s) || "/".equals(s);
 	}
 
 	private int calculate(String operator, String operand1, String operand2) {
 		int op1 = Integer.parseInt(operand1);
 		int op2 = Integer.parseInt(operand2);
-		if (operator.equals("+"))
+		if ("+".equals(operator))
 			return op1 + op2;
-		if (operator.equals("-"))
+		if ("-".equals(operator))
 			return op1 - op2;
-		if (operator.equals("*"))
+		if ("*".equals(operator))
 			return op1 * op2;
 		else // operator.equals("/")
 			return op1 / op2;
@@ -200,7 +200,7 @@ public class QueueUtilities {
 			while (currA.charValue() != currB.charValue()) {
 				qB.enqueue(currB);
 				currB = (Character) qB.dequeue();
-				if (currB == headB)
+				if (currB.equals(headB))
 					return false;
 			}
 		}

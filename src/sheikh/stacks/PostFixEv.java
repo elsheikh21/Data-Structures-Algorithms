@@ -5,7 +5,8 @@ public class PostFixEv {
 	public static String evaluate(String postfixExp) {
 		String[] values = postfixExp.split(" ");
 		StackObject numbers = new StackObject(values.length);
-		int operand1, operand2;
+		int operand1;
+		int operand2;
 		for (int i = 0; i < values.length; i++) {
 			char cur = values[i].charAt(0);
 			if (cur >= '0' && cur <= '9') {
@@ -29,6 +30,8 @@ public class PostFixEv {
 				case '/':
 					numbers.push(Integer.valueOf(operand2 / operand1));
 					break;
+				default:
+					System.out.println("Invalid Operator");
 				}
 			}
 		}
