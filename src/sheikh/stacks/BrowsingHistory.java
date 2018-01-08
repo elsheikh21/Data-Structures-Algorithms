@@ -3,8 +3,8 @@ package sheikh.stacks;
 import sheikh.objects.Link;
 
 public class BrowsingHistory {
-	StackObject history;
-	StackObject helper;
+	private StackObject history;
+	private StackObject helper;
 
 	public BrowsingHistory() {
 		super();

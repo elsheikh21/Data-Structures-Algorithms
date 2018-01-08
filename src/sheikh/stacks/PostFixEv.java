@@ -32,6 +32,7 @@ public class PostFixEv {
 					break;
 				default:
 					System.out.println("Invalid Operator");
+					break;
 				}
 			}
 		}

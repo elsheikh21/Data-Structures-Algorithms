@@ -5,9 +5,9 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class Link {
-	String url;
-	String date; // Format YYYY -MM -DD
-	int frequency; // number of times a url has been visited
+	private String url;
+	private String date; // Format YYYY -MM -DD
+	private int frequency; // number of times a url has been visited
 
 	public String getUrl() {
 		return url;

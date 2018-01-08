@@ -5,7 +5,7 @@ import sheikh.queues.PriorityQueue;
 import sheikh.stacks.StackObject;
 
 public class SuperMarket {
-	PriorityQueue priorityQueue;
+	private PriorityQueue priorityQueue;
 
 	public SuperMarket(int maxSize) {
 		priorityQueue = new PriorityQueue(maxSize);

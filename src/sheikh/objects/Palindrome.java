@@ -54,8 +54,8 @@ public class Palindrome {
 		return "Word is palindrome";
 	}
 
-	public boolean isPal(String word) {
-		word = word.toLowerCase().replace(" ", "");
+	public boolean isPal(String str) {
+		String word = str.toLowerCase().replace(" ", "");
 		int mid = word.length() / 2;
 		StackObject stack = new StackObject(mid);
 		QueueObject queue = new QueueObject(mid);

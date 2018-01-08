@@ -1,8 +1,8 @@
 package sheikh.objects;
 
 public class MySet {
-	int[] arr;
-	int itemsCount;
+	private int[] arr;
+	private int itemsCount;
 
 	public MySet() {
 		arr = new int[100];
