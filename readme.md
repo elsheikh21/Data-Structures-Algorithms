@@ -131,6 +131,27 @@
 
 <details>
 <summary>5. Priority Queues</summary>
+
+* 1st Exercise 
+    * implement YoghutProduct.class & SuperMarket.class
+    * YoghurtProduct 3 instance vars (date[key], id, price)
+    * SuperMarket insert new yoghurt, calculate discount depending upon its priority
+* 2nd Exercise 
+    * implement University.class 
+    * 2 instance vars (Name, Rank)
+    * Key is [rank], if ranks are equal then key is [name] 
+* 3rd Exercise
+    * Implement Patient.class & EmergencyRoom.class
+    * patient instance vars (name, severity [desc])
+    * key is severity
+</details>
+
+---
+
+<details>
+<summary>6. Linked Lists I</summary>
+
+* Sadly empty :|
 </details>
 
 

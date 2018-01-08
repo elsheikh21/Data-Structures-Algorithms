@@ -4,10 +4,8 @@ import sheikh.stacks.StackObject;
 
 public class QueueUsingStacks {
 	private StackObject stack;
-	private int maxSize;
 
 	public QueueUsingStacks(int maxSize) {
-		this.maxSize = maxSize;
 		stack = new StackObject(maxSize);
 	}
 
@@ -43,4 +41,5 @@ public class QueueUsingStacks {
 	public void displayQueue() {
 		stack.printStack();
 	}
+
 }

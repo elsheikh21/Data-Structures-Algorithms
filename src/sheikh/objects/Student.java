@@ -1,5 +1,6 @@
 package sheikh.objects;
 
+
 /**
  * @author Sheikh Define a class Student (first name, last name and id)
  */
@@ -50,4 +51,5 @@ public class Student {
 		this.id = id;
 		this.gpa = gpa;
 	}
+	
 }
