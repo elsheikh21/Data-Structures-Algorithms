@@ -1,6 +1,6 @@
 package sheikh.utils;
 
-import sheikh.objects.Palindrome;
+//import sheikh.objects.Palindrome;
 import sheikh.objects.Student;
 import sheikh.stacks.ArrayStack;
 //import sheikh.stacks.PostFixEv;
