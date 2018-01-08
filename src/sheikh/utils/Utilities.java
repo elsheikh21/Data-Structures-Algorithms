@@ -3,7 +3,7 @@ package sheikh.utils;
 import sheikh.objects.Palindrome;
 import sheikh.objects.Student;
 import sheikh.stacks.ArrayStack;
-import sheikh.stacks.PostFixEv;
+//import sheikh.stacks.PostFixEv;
 import sheikh.stacks.StackObject;
 
 public class Utilities {
@@ -330,73 +330,73 @@ public class Utilities {
 	}
 
 	public static void main(String[] args) {
-		StackObject stack = new StackObject(5);
-
-		Student a = new Student("Ahmed", "ElSheikh", 283067, 1.19);
-		Student b = new Student("Ahmed", "ElSheikh", 283067, 3.11);
-		Student x = new Student("Ahmed", "ElSheikh", 283067, 3.1);
-		Student y = new Student("Ahmed", "ElSheikh", 283067, 2.3);
-		Student z = new Student("Ahmed", "ElSheikh", 283067, 4.53);
-
-		stack.push(x);
-		stack.push(y);
-		stack.push(z);
-		stack.push(a);
-		stack.push(b);
-
-		Utilities utilities = new Utilities();
-
-		// Exercise #01
-		String print = utilities.averageGPA(stack);
-		System.out.println(print);
-
-		// Exercise #02
-		// I copied its solution, was not able to solve it.
-		print = Utilities.infixToPostfix("1+2*3-4");
-		System.out.println(print);
-
-		// Exercise #03
-		// I copied its solution, was not able to solve it.
-		print = PostFixEv.evaluate("1 2 3 * + 4 -");
-		System.out.println(print);
-
-		// Exercise #04 is duplicated, removeNthElement
-		// Exercise #05 is Browsing History and Link files
-
-		// Exercise #06
-		StackObject strings = new StackObject(5);
-		StackObject integers = new StackObject(5);
-
-		strings.push((String) "Ahmed");
-		strings.push((String) "Sheikh");
-		strings.push((String) "Farah");
-		strings.push((String) "Hesham");
-		strings.push((String) "Eman");
-
-		integers.push((Integer) 1);
-		integers.push((Integer) 4);
-		integers.push((Integer) 3);
-		integers.push((Integer) 2);
-		integers.push((Integer) 3);
-
-		StackObject duplicate = utilities.duplicate(strings, integers);
-		utilities.reverseStackObject(duplicate).printStack();
+//		StackObject stack = new StackObject(5);
+//
+//		Student a = new Student("Ahmed", "ElSheikh", 283067, 1.19);
+//		Student b = new Student("Ahmed", "ElSheikh", 283067, 3.11);
+//		Student x = new Student("Ahmed", "ElSheikh", 283067, 3.1);
+//		Student y = new Student("Ahmed", "ElSheikh", 283067, 2.3);
+//		Student z = new Student("Ahmed", "ElSheikh", 283067, 4.53);
+//
+//		stack.push(x);
+//		stack.push(y);
+//		stack.push(z);
+//		stack.push(a);
+//		stack.push(b);
+//
+//		Utilities utilities = new Utilities();
+//
+//		// Exercise #01
+//		String print = utilities.averageGPA(stack);
+//		System.out.println(print);
+//
+//		// Exercise #02
+//		// I copied its solution, was not able to solve it.
+//		print = Utilities.infixToPostfix("1+2*3-4");
+//		System.out.println(print);
+//
+//		// Exercise #03
+//		// I copied its solution, was not able to solve it.
+//		print = PostFixEv.evaluate("1 2 3 * + 4 -");
+//		System.out.println(print);
+//
+//		// Exercise #04 is duplicated, removeNthElement
+//		// Exercise #05 is Browsing History and Link files
+//
+//		// Exercise #06
+//		StackObject strings = new StackObject(5);
+//		StackObject integers = new StackObject(5);
+//
+//		strings.push((String) "Ahmed");
+//		strings.push((String) "Sheikh");
+//		strings.push((String) "Farah");
+//		strings.push((String) "Hesham");
+//		strings.push((String) "Eman");
+//
+//		integers.push((Integer) 1);
+//		integers.push((Integer) 4);
+//		integers.push((Integer) 3);
+//		integers.push((Integer) 2);
+//		integers.push((Integer) 3);
+//
+//		StackObject duplicate = utilities.duplicate(strings, integers);
+//		utilities.reverseStackObject(duplicate).printStack();
 
 		// Exercise #07, Class palindrome
 		Palindrome palindrome = new Palindrome();
-		print = palindrome.isPalindrome("mom") ? "It is a palindrome" : "It is not a palindrome";
-		System.out.println(print);
+		String toPrint = palindrome.isPalindrome("mom") ? "It is a palindrome" : "It is not a palindrome";
+		System.out.println(toPrint);
 
-		print = palindrome.isPalindrome("car") ? "It is a palindrome" : "It is not a palindrome";
-		System.out.println(print);
+		toPrint = palindrome.isPalindrome("car") ? "It is a palindrome" : "It is not a palindrome";
+		System.out.println(toPrint);
 
-		print = palindrome.isPalindrome("Are we not drawn onward we few drawn onward to new era") ? "It is a palindrome"
+		toPrint = palindrome.isPalindrome("Are we not drawn onward we few drawn onward to new era") ? "It is a palindrome"
 				: "It is not a palindrome";
-		System.out.println(print);
+		System.out.println(toPrint);
 
-		print = palindrome.isPalindrome("Then it comes to be that the soothing light at the end of your tunnel\r\n"
+		toPrint = palindrome.isPalindrome("Then it comes to be that the soothing light at the end of your tunnel\r\n"
 				+ "Is just a freight train coming your way") ? "It is a palindrome" : "It is not a palindrome";
-		System.out.println(print);
+		System.out.println(toPrint);
 
 		// Extra Exercise on Palindrome, check if word is palindrome
 		System.out.println(palindrome.wordIsPalindrome("car"));
