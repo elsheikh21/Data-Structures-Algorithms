@@ -56,7 +56,7 @@ public class LinkList {
 			insertLastRec(head, obj);
 	}
 
-	private void insertLastRec(Link head2, Object obj) {
+	private void insertLastRec(Link head, Object obj) {
 		if (head.next == null)
 			head.next = new Link(obj);
 		else

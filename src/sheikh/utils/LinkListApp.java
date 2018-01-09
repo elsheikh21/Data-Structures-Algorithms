@@ -107,44 +107,42 @@ public class LinkListApp {
 		return linkedList;
 	}
 
-	public static void main(String[] args) {
-		LinkList l = new LinkList();
-		l.insertLast((Integer) 1);
-		l.insertLast((Integer) 2);
-		l.insertLast((Integer) 3);
-		l.insertLast((Integer) 4);
-		l.insertLast((Integer) 5);
-		l.insertLast((Integer) 6);
-		l.insertLast((Integer) 7);
-
-		LinkListApp linkListApp = new LinkListApp();
-
-		// linkListApp.print(l);
-		// linkListApp.print(linkListApp.reverse(l));
-
-		// linkListApp.print(l);
-		// LinkListApp.removeLast(l);
-		// linkListApp.print(l);
-
-		// linkListApp.print(l);
-		// LinkListApp.insertLast(l, 30);
-		// linkListApp.print(l);
-
-		// linkListApp.print(l);
-		// linkListApp.print(linkListApp.removeDuplicates(l));
-
-		// System.out.println("The LinkList size is: " + l.size());
-		// System.out.println("The LinkList size is: " + l.countRec());
-
-		// linkListApp.print(l);
-		// linkListApp.print(LinkListApp.mix(l));
-
-		// linkListApp.print(l);
-		// linkListApp.print(LinkListApp.cutAList(l)); // The easy way
-		// linkListApp.print(LinkListApp.cutList(l));
-		
-		
-
-	}
+	// public static void main(String[] args) {
+	// LinkList l = new LinkList();
+	// l.insertLast((Integer) 1);
+	// l.insertLast((Integer) 2);
+	// l.insertLast((Integer) 3);
+	// l.insertLast((Integer) 4);
+	// l.insertLast((Integer) 5);
+	// l.insertLast((Integer) 6);
+	// l.insertLast((Integer) 7);
+	//
+	// LinkListApp linkListApp = new LinkListApp();
+	//
+	// linkListApp.print(l);
+	// linkListApp.print(linkListApp.reverse(l));
+	//
+	// linkListApp.print(l);
+	// LinkListApp.removeLast(l);
+	// linkListApp.print(l);
+	//
+	// linkListApp.print(l);
+	// LinkListApp.insertLast(l, 30);
+	// linkListApp.print(l);
+	//
+	// linkListApp.print(l);
+	// linkListApp.print(linkListApp.removeDuplicates(l));
+	//
+	// System.out.println("The LinkList size is: " + l.size());
+	// System.out.println("The LinkList size is: " + l.countRec());
+	//
+	// linkListApp.print(l);
+	// linkListApp.print(LinkListApp.mix(l));
+	//
+	// linkListApp.print(l);
+	// linkListApp.print(LinkListApp.cutAList(l)); // The easy way
+	// linkListApp.print(LinkListApp.cutList(l));
+	//
+	// }
 
 }
