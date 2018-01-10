@@ -233,12 +233,12 @@ public class Utilities {
 			char ch = str.charAt(i);
 			stk.push(ch);
 		}
-		String ret = "";
+		StringBuilder ret = new StringBuilder();
 		for (int i = 0; i < str.length(); i++) {
 			char charFromStack = ((Character) stk.pop()).charValue();
-			ret = ret + charFromStack;
+			ret.append(charFromStack);
 		}
-		return ret;
+		return ret.toString();
 	}
 
 	public String averageGPA(StackObject stack) {
@@ -267,12 +267,12 @@ public class Utilities {
 	}
 
 	public static String infixToPostfix(String infix) {
-		String postfix = "";
+		StringBuilder postfix = new StringBuilder();
 		ArrayStack stack = new ArrayStack(infix.length());
 		for (int i = 0; i < infix.length(); i++) {
 			char c = infix.charAt(i);
 			if (c >= '0' && c <= '9') {
-				postfix += c;
+				postfix.append(c);
 			} else {
 				if (stack.isEmpty())
 					stack.push(c);
@@ -280,7 +280,7 @@ public class Utilities {
 					int currentP = getPriority(c);
 					int stackP = getPriority((char) stack.top());
 					while (stackP <= currentP) {
-						postfix += (char) stack.pop();
+						postfix.append((char) stack.pop());
 						if (stack.isEmpty())
 							break; // break to exit the loop
 						stackP = getPriority((char) stack.top());
@@ -290,7 +290,7 @@ public class Utilities {
 			}
 		}
 		while (!stack.isEmpty())
-			postfix += (char) stack.pop();
+			postfix.append((char) stack.pop());
 		return String.format("The expression in infix notation is (%1s) in reverse polish notation is (%2s)", infix,
 				postfix);
 	}

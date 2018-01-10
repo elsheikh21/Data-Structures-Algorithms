@@ -151,8 +151,46 @@
 <details>
 <summary>6. Linked Lists I</summary>
 
-* Sadly empty :|
+* 1st exercise 
+    * implement method to insertLast (external method, internal recursive)
+    * implement method to removeLast (external method)
+* 2nd exercise 
+    * reverse a LinkList (internal, external)
+* 3rd exercise 
+    * reverse in place (external)
+* 4th exercise 
+    * remove duplicates from linklist (external method)
+* 5th exercise 
+    * method to get size of linklist (internal recursive, iterative)
+* 6th exercise 
+    * mix elements of a linklist (external)
+* 7th exercise 
+    * cut a link list (external, internal)
+* 8th exercise 
+    * splitting a list (external)
+* 9th exercise 
+    * alternating split (external)
+* 10th exercise 
+    * get max of a list (external)
+* 11th exercise 
+    * check if linklist contains an obj (external, internal recursive)
+* 12th exercise 
+    * implement a method to merge two lists (external, internal)
+    * implement a method to unite two lists (external, internal)
+    * implement a method to get difference between two lists (external, internal)
+    * implement a method to get intersection between two lists (external, internal)
+    * implement a method to check if two lists are equal or not (external, internal)
+    
 </details>
+
+---
+
+<details>
+<summary>7. Linked Lists II</summary>
+
+* Empty so far
+</details>
+
 
 
 </details>
