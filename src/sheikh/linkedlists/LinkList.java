@@ -216,9 +216,6 @@ public class LinkList {
 	}
 
 	public LinkList union(LinkList l) {
-		 System.out.println(this.toString());
-		 System.out.println(l.toString());
-
 		LinkList res = new LinkList();
 		Link currT = this.head;
 		Link currL = l.head;

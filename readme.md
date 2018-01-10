@@ -3,6 +3,10 @@
 <details>
 <summary>Data Structure</summary>
 
+<br>
+
+---
+
 <details>
 <summary>1. Arrays</summary>
 
@@ -186,17 +190,36 @@
 ---
 
 <details>
-<summary>7. Linked Lists II</summary>
+<summary>Extra Recursion problems</summary>
 
-* Empty so far
+* 01 - calculate factorial of a number
+* 02 - implement a method to count down.
+* 03 - calculate number power
+* 04 - calculate natural logarithmic 
+* 05 - calculate the multiply of a number
+* 06 - calculate the divide of a number
+* 07 - calculate the modulus of a number
+* 08 - return sum of a number bigger than 2 digits
+* 09 - count digits of a number 
+* 10 - check if a number is a prime number or not 
+* 11 - calculate cube of a number 
+* 12 - calculate binominal coefficient 
+* 13 - count the number of repitions of a character in string
+* 14 - reverse a string 
+* 15 - replace a character in a string with a whitespace
+* 19 - search for a character in a string, return its index
 </details>
-
-
-
+ 
+ ---
+ 
+ <br>
+ 
 </details>
 
 ---
 ---
+
+<br>
 
 <details>
 <summary>Algorithms</summary>
