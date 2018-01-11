@@ -25,15 +25,15 @@ public class Palindrome {
 	public String reverse(String str) {
 		String word = str.toLowerCase();
 		int size = word.length();
-		String rev = "";
+		StringBuffer rev = new StringBuffer();
 		char[] ch = new char[size];
 		for (int i = 0; i < size; i++) {
 			int j = i + 1;
 			ch[size - j] = word.charAt(i);
 		}
 		for (int i = 0; i < ch.length; i++)
-			rev += ch[i];
-		return rev;
+			rev.append(ch[i]);
+		return rev.toString();
 	}
 
 	public boolean checkWord(String word) {

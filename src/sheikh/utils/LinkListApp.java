@@ -277,6 +277,10 @@ public class LinkListApp {
 		return intersection;
 	}
 
+	public static void main(String[] args) {
+
+	}
+
 	/*
 	 * public static void main(String[] args) { LinkList lA = new LinkList();
 	 * lA.insertLast((Character) 'a'); lA.insertLast((Character) 'b');
@@ -298,12 +302,11 @@ public class LinkListApp {
 	 * linkListApp.print(l); // // linkListApp.print(l); //
 	 * linkListApp.print(linkListApp.removeDuplicates(l)); // //
 	 * System.out.println("The LinkList size is: " + l.size()); //
-	 * System.out.println("The LinkList size is: " + l.countRec()); // I could not
-	 * // solve. // // linkListApp.print(l); //
-	 * linkListApp.print(LinkListApp.mix(l)); // // linkListApp.print(l); //
-	 * linkListApp.print(LinkListApp.cutAList(l)); // The easy way //
-	 * linkListApp.print(LinkListApp.cutList(l)); // // linkListApp.print(l); //
-	 * l.cutList(); // I could not solve. // linkListApp.print(l); // //
+	 * System.out.println("The LinkList size is: " + l.countRec()); // //
+	 * linkListApp.print(l); // linkListApp.print(LinkListApp.mix(l)); // //
+	 * linkListApp.print(l); // linkListApp.print(LinkListApp.cutAList(l)); // The
+	 * easy way // linkListApp.print(LinkListApp.cutList(l)); // //
+	 * linkListApp.print(l); // l.cutList(); // linkListApp.print(l); // //
 	 * LinkListApp.frontBackSplit(l); // // LinkListApp.alternateSplit(l); // //
 	 * System.out.println(linkListApp.theMax(l)); //
 	 * System.out.println(linkListApp.getMax(l)); // // System.out.println( //
@@ -316,6 +319,13 @@ public class LinkListApp {
 	 * temporary.merge(l); // temporary.equal(l); // temporary.contain(5);
 	 * 
 	 * // temporary.intersection(l); // temporary.difference(l); //
-	 * temporary.union(l); }
+	 * temporary.union(l); LinkList l = new LinkList(); l.insertLast((Integer) 1);
+	 * l.insertLast((Integer) 21); l.insertLast((Integer) 132);
+	 * l.insertLast((Integer) 5); l.insertLast((Integer) 4); l.insertLast((Integer)
+	 * 2); l.insertLast((Integer) 41); l.insertLast((Integer) 12);
+	 * System.out.println(l.containRec((Integer)
+	 * 132));System.out.println(l.getMaxRec());System.out.println(l.insertLastRec((
+	 * Integer) 30))); System.out.println(l.sizeRec());}
+	 * 
 	 */
 }

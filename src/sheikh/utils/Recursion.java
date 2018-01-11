@@ -163,14 +163,13 @@ public class Recursion {
 
 	public static String delete(String word, char ch) {
 		String str = word.toLowerCase();
-		if (str.length() == 0) {
+		if (str.length() == 0)
 			return "";
-		} else {
-			if (str.charAt(str.length() - 1) == ch)
-				return delete(str.substring(0, str.length() - 1), ch) + " ";
-			else
-				return delete(str.substring(0, str.length() - 1), ch) + str.charAt(str.length() - 1);
-		}
+		else if (str.charAt(str.length() - 1) == ch)
+			return delete(str.substring(0, str.length() - 1), ch) + " ";
+		else
+			return delete(str.substring(0, str.length() - 1), ch) + str.charAt(str.length() - 1);
+
 	}
 
 	public static int search(String word, char ch) {

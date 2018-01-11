@@ -50,18 +50,19 @@ public class LinkList {
 		current.next = newLink;
 	}
 
-	public void insertLastRec(Object obj) {
-		if (head == null)
-			head = new Link(obj);
+	private void insertLastRec(Link curr, Object obj) {
+		if (curr.next == null)
+			curr.next = new Link(obj);
 		else
-			insertLastRec(head, obj);
+			insertLastRec(curr.next, obj);
 	}
 
-	private void insertLastRec(Link head, Object obj) {
-		if (head.next == null)
-			head.next = new Link(obj);
+	public void insertLastRec(Object obj) {
+		Link curr = head;
+		if (curr == null)
+			curr = new Link(obj);
 		else
-			insertLastRec(head.next, obj);
+			insertLastRec(curr, obj);
 	}
 
 	public Object removeLast() {
@@ -110,6 +111,26 @@ public class LinkList {
 		return max;
 	}
 
+	public Object getMaxRec() {
+		if (head == null)
+			return null;
+		Comparable max = (Comparable) head.data;
+		if (head.next == null)
+			return head;
+		else
+			return getMaxRec(head.next, max);
+	}
+
+	private Object getMaxRec(Link curr, Comparable max) {
+		if (curr.next == null) {
+			return max;
+		} else {
+			if (max.compareTo(curr.data) < 0)
+				max = (Comparable) curr.data;
+			return getMaxRec(curr.next, max);
+		}
+	}
+
 	public boolean isEmpty() {
 		return head == null;
 	}
@@ -124,15 +145,15 @@ public class LinkList {
 		return count;
 	}
 
-	public int countRec() {
-		return countRecHlp(head);
+	public int sizeRec() {
+		return 1 + sizeRec(head);
 	}
 
-	public int countRecHlp(Link l) {
-		if (l == null)
+	private int sizeRec(Link curr) {
+		if (curr == null)
 			return 0;
 		else
-			return 1 + countRecHlp(l.next);
+			return 1 + sizeRec(curr.next);
 	}
 
 	public void cutList() {
@@ -153,6 +174,19 @@ public class LinkList {
 		current.next = head;
 		head = previous.next;
 		previous.next = null;
+	}
+
+	public boolean containRec(Object obj) {
+		return containsRecHelper(head, obj);
+	}
+
+	private boolean containsRecHelper(Link curr, Object obj) {
+		if (curr == null)
+			return false;
+		if (curr.data.equals(obj))
+			return true;
+		else
+			return containsRecHelper(curr.next, obj);
 	}
 
 	public boolean contain(Object obj) {
@@ -219,12 +253,12 @@ public class LinkList {
 		LinkList res = new LinkList();
 		Link currT = this.head;
 		Link currL = l.head;
-		while(true) {
-			if(currT != null)
+		while (true) {
+			if (currT != null)
 				res.insertLast(currT.data);
-			if(currL != null)
+			if (currL != null)
 				res.insertLast(currL.data);
-			if(currT == null && currL == null)
+			if (currT == null && currL == null)
 				break;
 			currL = currL.next;
 			currT = currT.next;
@@ -232,30 +266,30 @@ public class LinkList {
 		return res;
 	}
 
-	 public LinkList intersection(LinkList l) {
-		 System.out.println(this.toString());
-		 System.out.println(l.toString());
+	public LinkList intersection(LinkList l) {
+		System.out.println(this.toString());
+		System.out.println(l.toString());
 
-		 LinkList result = new LinkList();
-		 Link currT;
-		 for(currT = this.head; currT != null; currT = currT.next) 
-			 if(l.contains(currT.data))
-				 result.insertLast(currT.data);		
-		 System.out.println(result.toString());
-		 return result;
-	 }
+		LinkList result = new LinkList();
+		Link currT;
+		for (currT = this.head; currT != null; currT = currT.next)
+			if (l.contains(currT.data))
+				result.insertLast(currT.data);
+		System.out.println(result.toString());
+		return result;
+	}
 
 	public LinkList difference(LinkList l) {
-		 System.out.println(this.toString());
-		 System.out.println(l.toString());
+		System.out.println(this.toString());
+		System.out.println(l.toString());
 
 		if (this.head == null)
 			return l;
 		if (l.head == null)
 			return this;
 		Link currT = this.head;
-		while(currT != null) {
-			if(!l.contains(currT.data))
+		while (currT != null) {
+			if (!l.contains(currT.data))
 				l.insertLast(currT.data);
 			currT = currT.next;
 		}
@@ -274,10 +308,4 @@ public class LinkList {
 		res.append("]");
 		return res.toString();
 	}
-
-	// TODO: Contains in recursion
-	// TODO: getMax in recursion
-	// TODO: count in recursion
-	// TODO: insertLast in recursion
-	
 }
