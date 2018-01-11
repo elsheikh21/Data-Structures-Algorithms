@@ -125,9 +125,9 @@ public class LinkList {
 		if (curr.next == null)
 			return max;
 		else if (max.compareTo(curr.data) < 0)
-			return getMaxRec(curr.next, max);
+			return getMaxRec(curr.next, (Comparable) curr.data);
 
-		return getMaxRec(curr.next, (Comparable) curr.data);
+		return getMaxRec(curr.next, max);
 	}
 
 	public boolean isEmpty() {
