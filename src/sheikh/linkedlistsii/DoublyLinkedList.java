@@ -1,4 +1,4 @@
-package sheikh.linkedlistsII;
+package sheikh.linkedlistsii;
 
 class Link {
 	public Object data;

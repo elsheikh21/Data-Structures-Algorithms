@@ -278,9 +278,13 @@ public class LinkListApp {
 	}
 
 	public static void main(String[] args) {
-
+		LinkList l = new LinkList();
+		l.insertLast((Integer) 2);
+		l.insertLast((Integer) 4);
+		l.insertLast((Integer) 6);
+		l.insertLast((Integer) 8);
+		System.out.println(l.getMaxRec());
 	}
-
 	/*
 	 * public static void main(String[] args) { LinkList lA = new LinkList();
 	 * lA.insertLast((Character) 'a'); lA.insertLast((Character) 'b');

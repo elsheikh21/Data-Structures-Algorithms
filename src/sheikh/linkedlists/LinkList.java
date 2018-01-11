@@ -122,13 +122,24 @@ public class LinkList {
 	}
 
 	private Object getMaxRec(Link curr, Comparable max) {
-		if (curr.next == null) {
-			return max;
-		} else {
-			if (max.compareTo(curr.data) < 0)
-				max = (Comparable) curr.data;
-			return getMaxRec(curr.next, max);
-		}
+		Comparable item = max;
+		if (curr.next == null)
+			return item;
+		else if (item.compareTo(curr.data) < 0)
+			item = (Comparable) curr.data;
+
+		return getMaxRec(curr.next, item);
+	}
+
+	public static void main(String[] args) {
+		LinkList l = new LinkList();
+		l.insertLast((Integer) 52);
+		l.insertLast((Integer) 8);
+		l.insertLast((Integer) 8);
+		l.insertLast((Integer) 2);
+		l.insertLast((Integer) 84);
+		l.insertLast((Integer) 8);
+		System.out.println(l.getMaxRec());
 	}
 
 	public boolean isEmpty() {
