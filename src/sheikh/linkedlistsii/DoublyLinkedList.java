@@ -14,7 +14,8 @@ class Link {
 	}
 }
 
-class DoublyLinkedList {
+@SuppressWarnings({ "unchecked", "rawtypes" })
+public class DoublyLinkedList {
 	private Link first; // reference to first link on list
 	private Link last; // reference to first link on list
 
@@ -197,31 +198,116 @@ class DoublyLinkedList {
 		return 1 + countRec(curr.next);
 	}
 
-	// TODO: reverse
-	// TODO: Recursive reverse
-	// TODO: sort using insert sort method
-	// TODO: insertIntoSorted a comparable object
-	
-	public static void main(String[] args) {
-		DoublyLinkedList dll = new DoublyLinkedList();
-		dll.insertLast((Integer) 1);
-		dll.insertLast((Integer) 2);
-		dll.insertLast((Integer) 3);
-		dll.insertLast((Integer) 4);
-		dll.insertLast((Integer) 5);
-		dll.insertLast((Integer) 6);
-		dll.insertLast((Integer) 7);
-		dll.insertLast((Integer) 8);
-		dll.insertLast((Integer) 9);
-		dll.insertLast((Integer) 10);
-		// System.out.println(dll.contain((Integer) 21));
-		// dll.insertAfter((Integer) 5, (Integer) 21);
-		// dll.displayForward();
-		// dll.insertBefore((Integer) 10, (Integer) 21);
-		// dll.displayForward();
-		// dll.delete((Integer) 9);
-		// dll.displayForward();
-		// System.out.println(dll.size());
-		// System.out.println(dll.countRec());
+	public void insertToSorted(Comparable x) {
+		Link current = first;
+		Link temp = new Link(x);
+		if (first == null) {
+			first = temp;
+			last = temp;
+			return;
+		}
+		while (current != null) {
+			if (x.compareTo(current.data) < 0) {
+				temp.next = current;
+				temp.previous = current.previous;
+				if (current.previous != null) {
+					current.previous.next = temp;
+				} else {
+					first = temp;
+				}
+				current.previous = temp;
+				break;
+			}
+			if (current.next == null) {
+				current.next = temp;
+				temp.previous = current;
+				last = temp;
+				break;
+			}
+			current = current.next;
+		}
 	}
+
+	public void insertionSort() {
+		DoublyLinkedList dll = new DoublyLinkedList();
+		Link curr = first;
+		while (curr != null) {
+			dll.insertToSorted((Comparable) curr.data);
+			curr = curr.next;
+		}
+		// There was an error with my approach, did not refer to dll after finishing.
+		first = dll.first;
+		last = dll.last;
+	}
+
+	// Without using pointers
+	public void reverse() {
+		DoublyLinkedList dll = new DoublyLinkedList();
+		while (!this.isEmpty())
+			dll.insertLast(this.removeLast());
+		first = dll.first;
+		last = dll.last;
+	}
+
+	// With using of pointers
+	public void rev() {
+		Link current = first;
+		while (current != null) {
+			if (current.previous == null)
+				last = current;
+			if (current.next == null)
+				first = current;
+			Link temp = current.previous;
+			current.previous = current.next;
+			current.next = temp;
+			temp = temp.previous;
+		}
+	}
+
+	public void reverseRecHelper(Link curr) {
+		if (curr != null) {
+			if (curr.previous != null)
+				last = curr;
+			if (curr.next != null)
+				first = curr;
+			Link temp = curr.previous;
+			curr.previous = curr.next;
+			curr.next = temp;
+			reverseRecHelper(curr.previous);
+		}
+	}
+
+	public void reverseRec() {
+		reverseRecHelper(first);
+	}
+
+	/*
+	 * public static void main(String[] args) { DoublyLinkedList dll = new
+	 * DoublyLinkedList(); dll.insertLast((Integer) 112); dll.insertLast((Integer)
+	 * 23); dll.insertLast((Integer) 3); dll.insertLast((Integer) 452);
+	 * dll.insertLast((Integer) 5); dll.insertLast((Integer) 653);
+	 * dll.insertLast((Integer) 7234); dll.insertLast((Integer) 8);
+	 * dll.insertLast((Integer) 951); dll.insertLast((Integer) 10);
+	 * 
+	 * // System.out.println(dll.contain((Integer) 21));
+	 * 
+	 * // dll.insertAfter((Integer) 5, (Integer) 21); // dll.displayForward();
+	 * 
+	 * // dll.insertBefore((Integer) 10, (Integer) 21); // dll.displayForward();
+	 * 
+	 * // dll.delete((Integer) 9); // dll.displayForward();
+	 * 
+	 * // System.out.println(dll.size()); // System.out.println(dll.countRec());
+	 * 
+	 * // dll.displayForward(); // dll.insertToSorted((Integer) 11); //
+	 * dll.displayForward(); // dll.insertToSorted((Integer) 0); //
+	 * dll.displayForward(); // dll.insertToSorted((Integer) 953); // Could not
+	 * solve it on my own. // dll.displayForward();
+	 * 
+	 * // dll.displayForward(); // dll.insertionSort(); // dll.displayForward();
+	 * 
+	 * // dll.displayForward(); // dll.reverse(); // dll.displayForward();
+	 * 
+	 * // dll.displayForward(); // dll.reverseRec(); // dll.displayForward(); }
+	 */
 }

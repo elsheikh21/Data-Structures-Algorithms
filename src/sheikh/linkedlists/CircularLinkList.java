@@ -1,6 +1,7 @@
 package sheikh.linkedlists;
 
-class CircularLinkList {
+@SuppressWarnings({ "unchecked", "rawtypes" })
+public class CircularLinkList {
 	private Link last;
 
 	public CircularLinkList() {
@@ -73,15 +74,44 @@ class CircularLinkList {
 		}
 	}
 
+	public void insertToSorted(Comparable obj) {
+		if (last == null) {
+			insertFirst(obj);
+		} else {
+			if (obj.compareTo(last.data) >= 0) {
+				insertLast(obj);
+			} else if (obj.compareTo(last.next.data) < 0) {
+				insertFirst(obj);
+			} else {
+				Link prev = last;
+				Link curr = last.next;
+				do {
+					if (obj.compareTo(curr.data) < 0) {
+						insertAfter(prev, obj);
+						break;
+					}
+					curr = curr.next;
+					prev = prev.next;
+				} while (curr != last.next);
+			}
+		}
+	}
+
+	public void insertAfter(Link curr, Object o) {
+		Link newLink = new Link(o);
+		newLink.next = curr.next;
+		curr.next = newLink;
+	}
+
 	public String toString() {
 		if (last == null)
 			return "[ ]";
-		StringBuilder res = new StringBuilder("[" + last.data);
-		Link current = last.next;
-		while (current != null) {
-			res.append(", " + current.data);
+		StringBuilder res = new StringBuilder("[" + last.next.data);
+		Link current = last.next.next;
+		do {
+			res.append(", " + String.valueOf(current.data));
 			current = current.next;
-		}
+		} while (current != last.next);
 		res.append("]");
 		return res.toString();
 	}

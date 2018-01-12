@@ -212,6 +212,26 @@
  
  ---
  
+<details>
+<summary>8. LinkedLists II </summary>
+
+* 1st exercise
+    
+    * implement a circular linked list class
+    * implement a method to append a circular linked list to "this"
+* 2nd exercise
+
+    * implement a method to insert after a key
+    * implement a method to insert before a key
+    * implement a method to delete a certain key
+    * apply insertion sort on a doubly linked list (iterative, external)
+    * implement a method to reverse a doubly linked list (iterative, recursive)
+    * implement a method to get count (iterative, recursive, external)
+* 3rd exercise
+
+    * implement Queues using DoublyLinkedLists
+</details>
+
  <br>
  
 </details>
