@@ -240,7 +240,7 @@
 * 1st exercise
     
     * implement a method to create a BST of an array
-* 2nd  
+* 2nd exercise
 
     * implement a method to get max of a BST (recursive, iterative)
 * 3rd exercise 
@@ -293,3 +293,4 @@
 
 ![Showing repository hierarchy](https://github.com/elsheikh21/Data-Structures-Algorithms/blob/master/img.png)
 
+<i class="fa fa-exclamation-circle"> Those numbers in the image are a static java tool analysis results for </i>
