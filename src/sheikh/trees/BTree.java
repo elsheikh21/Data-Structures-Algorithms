@@ -160,8 +160,8 @@ public class BTree {
 
 	public static BTree idealTopology(int[] a) {
 		BTree b = new BTree();
-		// start = 0; end = a.length - 1;
 		// returns a node to be the root of the BST
+		// start(0) and the end(a.length - 1) 
 		b.root = idealTopology(a, 0, a.length - 1);
 		return b;
 	}
