@@ -94,7 +94,7 @@ public class BTree {
 				successor = successor.left;
 			}
 			substitute = successor;
-			if (successorParent == current) {
+			if (successorParent.equals(current)) {
 				if (successor.right == null)
 					successorParent.right = null;
 				else
@@ -109,7 +109,7 @@ public class BTree {
 			successor.left = current.left;
 			substitute = successor;
 		} // case 3 done
-		if (current == root) // Replacing the deleted node
+		if (current.equals(root)) // Replacing the deleted node
 			root = substitute;
 		else if (right)
 			parent.right = substitute;
@@ -125,14 +125,14 @@ public class BTree {
 		int nBlanks = 32;
 		boolean isRowEmpty = false;
 		System.out.println("......................................................");
-		while (isRowEmpty == false) {
+		while (!isRowEmpty) {
 			Stack<Node> localStack = new Stack<Node>();
 			isRowEmpty = true;
 
 			for (int j = 0; j < nBlanks; j++)
 				System.out.print(' ');
 
-			while (globalStack.isEmpty() == false) {
+			while (!globalStack.isEmpty()) {
 				Node temp = globalStack.pop();
 				if (temp != null) {
 					System.out.print(temp.data);
@@ -151,7 +151,7 @@ public class BTree {
 			} // end while globalStack not empty
 			System.out.println();
 			nBlanks /= 2;
-			while (localStack.isEmpty() == false)
+			while (!localStack.isEmpty())
 				globalStack.push(localStack.pop());
 		} // end while isRowEmpty is false
 		System.out.println("......................................................");
@@ -296,13 +296,12 @@ public class BTree {
 	}
 
 	private String oddNodes(Node node, String odd) {
-		String str = "";
 		if (node == null)
 			return "";
 		if (((int) node.data) % 2 == 1)
-			return str += node.data + " " + oddNodes(node.left, str) + oddNodes(node.right, str);
+			return odd += node.data + " " + oddNodes(node.left, odd) + oddNodes(node.right, odd);
 		else
-			return oddNodes(node.left, str) + oddNodes(node.right, str);
+			return oddNodes(node.left, odd) + oddNodes(node.right, odd);
 	}
 
 	public void mirror() {
