@@ -232,6 +232,44 @@
     * implement Queues using DoublyLinkedLists
 </details>
 
+---
+
+<details>
+<summary>9. Trees I </summary>
+
+* 1st exercise
+    
+    * implement a method to create a BST of an array
+* 2nd  
+
+    * implement a method to get max of a BST (recursive, iterative)
+* 3rd exercise 
+
+    * implement a method to get max of a BT (recursive, iterative)
+* 4th exercise (recursive)
+    
+    * implement a method to get size of a BST
+    * implement a method to get num of leaves of a BST
+    * implement a method to get sum of nodes of BST
+    * implement a method to check if the tree is a BST
+    * implement a method to number of left nodes of a BST
+    * implement a method to number of occurences of a key in BST
+    * implement a method to get number of duplicates of a key in BST
+    * implement a method to mirror a BST
+    * implement a method to get the number of odd nodes in BST
+* 5th exercise
+
+    * implement a method to get level of a key in BST
+* 6th exercise
+
+    * implement a method to double value of nodes of a BST (recursive)
+* 7th exercise
+
+    * implement a method to check if two BSTs are identical (recursive)
+
+</details>
+
+
  <br>
  
 </details>
