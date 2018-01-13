@@ -27,7 +27,8 @@ public class BTree {
 	}
 
 	public void add(Comparable key) {
-		Node current = root, parent = null;
+		Node current = root;
+		Node parent = null;
 		while (current != null) {
 			if (key.compareTo(current.data) < 0) {
 				parent = current;
@@ -287,9 +288,7 @@ public class BTree {
 	}
 
 	public boolean hasDups(Comparable key) {
-		if (countOccur(root, key) < 2)
-			return false;
-		return true;
+		return (countOccur(root, key) < 2);
 	}
 
 	public String oddNodes() {
@@ -297,12 +296,13 @@ public class BTree {
 	}
 
 	private String oddNodes(Node node, String odd) {
+		String str = "";
 		if (node == null)
 			return "";
 		if (((int) node.data) % 2 == 1)
-			return odd += node.data + " " + oddNodes(node.left, odd) + oddNodes(node.right, odd);
+			return str += node.data + " " + oddNodes(node.left, str) + oddNodes(node.right, str);
 		else
-			return oddNodes(node.left, odd) + oddNodes(node.right, odd);
+			return oddNodes(node.left, str) + oddNodes(node.right, str);
 	}
 
 	public void mirror() {
