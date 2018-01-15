@@ -64,7 +64,7 @@ public class BST {
 		Node node;
 
 		node = search(target);
-		if (node.equals(null))
+		if (node == null)
 			return;
 
 		if (node.left == null && node.right == null) { // case 1: node with no children
@@ -232,7 +232,7 @@ public class BST {
 	public int heightIter() {
 		if (root == null)
 			return -1;
-	
+
 		int countLeft = 0;
 		int countRight = 0;
 		Node nL = root.left;
@@ -358,5 +358,5 @@ public class BST {
 		}
 		return linkList;
 	}
-	
+
 }
