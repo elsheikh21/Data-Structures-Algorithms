@@ -188,29 +188,6 @@
 </details>
 
 ---
-
-<details>
-<summary>Extra Recursion problems</summary>
-
-* 01 - calculate factorial of a number
-* 02 - implement a method to count down.
-* 03 - calculate number power
-* 04 - calculate natural logarithmic 
-* 05 - calculate the multiply of a number
-* 06 - calculate the divide of a number
-* 07 - calculate the modulus of a number
-* 08 - return sum of a number bigger than 2 digits
-* 09 - count digits of a number 
-* 10 - check if a number is a prime number or not 
-* 11 - calculate cube of a number 
-* 12 - calculate binominal coefficient 
-* 13 - count the number of repitions of a character in string
-* 14 - reverse a string 
-* 15 - replace a character in a string with a whitespace
-* 19 - search for a character in a string, return its index
-</details>
- 
- ---
  
 <details>
 <summary>8. LinkedLists II </summary>
@@ -269,6 +246,27 @@
 
 </details>
 
+---
+
+<details>
+<summary> 10. Trees II </summary>
+
+* 1st exercise 
+    * print a certain level of a BT (recursive) 
+* 2nd exercise 
+    * breadth first traversal of a BT (recursive)
+* 3rd exercise 
+    * print elements of a BT in descending order (recursive, iterative)
+* 4th exercise 
+    * print range of elements of a BT (recursive)
+* 5th exercise 
+    * preOrder traversal of a BT (iterative)
+* 6th exercise 
+    * get path of an element in a BT (recursive, iterative)
+* 7th exercise
+    * getting the height of a BT (recursive, iterative)
+</details>
+
 
  <br>
  
@@ -282,7 +280,44 @@
 <details>
 <summary>Algorithms</summary>
     Empty so far...
+ <br>
+ 
 </details>
+
+---
+---
+
+<br>
+
+<details>
+<summary> Extras </summary>
+
+* JUnits
+
+*   <details>
+    <summary>Extra Recursion problems</summary>
+
+    * 01 - calculate factorial of a number
+    * 02 - implement a method to count down.
+    * 03 - calculate number power
+    * 04 - calculate natural logarithmic 
+    * 05 - calculate the multiply of a number
+    * 06 - calculate the divide of a number
+    * 07 - calculate the modulus of a number
+    * 08 - return sum of a number bigger than 2 digits
+    * 09 - count digits of a number 
+    * 10 - check if a number is a prime number or not 
+    * 11 - calculate cube of a number 
+    * 12 - calculate binominal coefficient 
+    * 13 - count the number of repitions of a character in string
+    * 14 - reverse a string 
+    * 15 - replace a character in a string with a whitespace
+    * 19 - search for a character in a string, return its index
+    </details>
+ 
+ ---
+
+ </details>
 
 ---
 ---

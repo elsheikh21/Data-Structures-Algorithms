@@ -99,7 +99,7 @@ public class Utilities {
 			sum1 += toPop;
 			temp.push(toPop);
 		}
-		if (size % 2 == 1)
+		if (size % 2 != 0)
 			arrayStack.pop();
 		for (int i = 0; i < size / 2; i++) {
 			toPop = arrayStack.pop();

@@ -11,7 +11,7 @@ public class Palindrome {
 		StackObject stack = new StackObject(mid);
 		for (int i = 0; i < mid; i++)
 			stack.push(String.valueOf(word.charAt(i)));
-		if (word.length() % 2 == 1)
+		if (word.length() % 2 != 0)
 			mid++;
 		for (int i = mid; i < word.length(); i++) {
 			String toCheck = (String) stack.pop();
@@ -46,7 +46,7 @@ public class Palindrome {
 		StackObject stack = new StackObject(middle);
 		for (int i = 0; i < middle; i++)
 			stack.push(String.valueOf(word.charAt(i)));
-		if (word.length() % 2 == 1)
+		if (word.length() % 2 != 0)
 			middle++;
 		for (int i = middle; i < word.length(); i++)
 			if ((String.valueOf(word.charAt(i)).compareTo((String) stack.pop()) != 0))
@@ -62,7 +62,7 @@ public class Palindrome {
 		for (int i = 0; i < mid; i++)
 			stack.push((Character) word.charAt(i));
 		int size = word.length();
-		if (size % 2 == 1)
+		if (size % 2 != 0)
 			mid++;
 		for (int j = mid; j < size; j++)
 			queue.enqueue((Character) word.charAt(j));

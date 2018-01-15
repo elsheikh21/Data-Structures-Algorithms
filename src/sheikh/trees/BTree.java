@@ -298,7 +298,7 @@ public class BTree {
 	private String oddNodes(Node node, String odd) {
 		if (node == null)
 			return "";
-		if (((int) node.data) % 2 == 1)
+		if (((int) node.data) % 2 != 0)
 			return odd += node.data + " " + oddNodes(node.left, odd) + oddNodes(node.right, odd);
 		else
 			return oddNodes(node.left, odd) + oddNodes(node.right, odd);

@@ -137,15 +137,15 @@ public class LinkList {
 	public int size() {
 		int count = 0;
 		Link x = head;
-		while (x.next != null) {
-			x = x.next;
+		while (x != null) {
 			count++;
+			x = x.next;
 		}
 		return count;
 	}
 
 	public int sizeRec() {
-		return 1 + sizeRec(head);
+		return sizeRec(head);
 	}
 
 	private int sizeRec(Link curr) {
