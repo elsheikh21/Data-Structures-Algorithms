@@ -2,18 +2,14 @@ package sheikh.linkedlistsii;
 
 class Node {
 	public Object data;
-	public Node next, prev;
+	public Node next;
+	public Node prev;
 
 }
 
 public class SortedDoublyLinkedList {
-
 	private Node head;
 	private Node tail;
-
-	public SortedDoublyLinkedList() {
-
-	}
 
 	public void insert(Object data) {
 

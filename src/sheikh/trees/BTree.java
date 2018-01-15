@@ -296,14 +296,16 @@ public class BTree {
 	}
 
 	private String oddNodes(Node node, String odd) {
+		String str = odd;
 		if (node == null)
 			return "";
 		if (((int) node.data) % 2 != 0)
-			return odd += node.data + " " + oddNodes(node.left, odd) + oddNodes(node.right, odd);
+			return str+= node.data + " " + oddNodes(node.left, str) + oddNodes(node.right, str);
 		else
-			return oddNodes(node.left, odd) + oddNodes(node.right, odd);
+			return oddNodes(node.left, str) + oddNodes(node.right, str);
 	}
-
+	
+	
 	public void mirror() {
 		mirror(root);
 	}
