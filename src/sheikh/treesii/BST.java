@@ -5,7 +5,6 @@ import java.util.*;
 import sheikh.linkedlists.LinkList;
 
 class Node {
-
 	public Object data;
 	public Node left, right;
 }
@@ -61,15 +60,15 @@ public class BST {
 	}
 
 	public void delete(Object target) {
-
-		Node parent, node;
+		Node parent;
+		Node node;
 
 		node = search(target);
-		if (node == null)
+		if (node.equals(null))
 			return;
 
 		if (node.left == null && node.right == null) { // case 1: node with no children
-			if (node == root)
+			if (node.equals(root))
 				root = null;
 			else {
 				parent = searchForNodeParent(node, root);
@@ -78,7 +77,7 @@ public class BST {
 		} else {
 			// case 2: node with 1 child
 			if (node.left != null && node.right == null || node.left == null && node.right != null) {
-				if (node == root) {
+				if (node.equals(root)) {
 					deleteRootwith1Child();
 				} else {
 					parent = searchForNodeParent(node, root);

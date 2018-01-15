@@ -8,7 +8,8 @@ class Node {
 
 public class SortedDoublyLinkedList {
 
-	private Node head, tail;
+	private Node head;
+	private Node tail;
 
 	public SortedDoublyLinkedList() {
 
@@ -26,7 +27,7 @@ public class SortedDoublyLinkedList {
 			insertFirst(data);
 		} else {
 			current = findNodeAfter(data);
-			if (current == tail)
+			if (current.equals(tail))
 				insertLast(data);
 			else
 				insertMiddle(data, current);
@@ -114,11 +115,11 @@ public class SortedDoublyLinkedList {
 
 		Node current;
 		current = findNode(dataTarget);
-		if (current == head) {
+		if (current.equals(head)) {
 			deleteFirst();
 			return;
 		}
-		if (current == tail) {
+		if (current.equals(tail)) {
 			deleteLast();
 			return;
 		}
