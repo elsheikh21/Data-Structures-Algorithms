@@ -58,11 +58,10 @@ public class LinkList {
 	}
 
 	public void insertLastRec(Object obj) {
-		Link curr = head;
-		if (curr == null)
-			curr = new Link(obj);
+		if (head == null)
+			head = new Link(obj);
 		else
-			insertLastRec(curr, obj);
+			insertLastRec(head, obj);
 	}
 
 	public Object removeLast() {
@@ -253,14 +252,16 @@ public class LinkList {
 		Link currT = this.head;
 		Link currL = l.head;
 		while (true) {
-			if (currT != null)
+			if (currT != null) {
 				res.insertLast(currT.data);
-			if (currL != null)
+				currT = currT.next;
+			}
+			if (currL != null) {
 				res.insertLast(currL.data);
+				currL = currL.next;
+			}
 			if (currT == null && currL == null)
 				break;
-			currL = currL.next;
-			currT = currT.next;
 		}
 		return res;
 	}
