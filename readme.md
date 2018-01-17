@@ -267,8 +267,29 @@
     * getting the height of a BT (recursive, iterative)
 </details>
 
+---
+
+<details>
+<summary> 11. Hash Tables </summary>
+
+* 1st exercise 
+    * remove duplicates from an unsorted array 
+* 2nd exercise 
+    * create class my hash table
+        * insert an element
+        * find an element
+        * is full & is Empty
+        * size
+        * toString
+* 3rd exercise 
+    * get systematic difference { (A - B) union (B - A) } of 2 arrays
+</details>
+
 
  <br>
+ 
+</details>
+
  
 </details>
 
